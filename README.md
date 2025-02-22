@@ -1,8 +1,46 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern portfolio website built with React, showcasing my skills, projects, and experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Modern and responsive design
+- Animated sections using Framer Motion
+- Contact form with EmailJS integration
+- Blog section
+- Skills and experience timeline
+- Project showcase
+- Dark/Light mode support
+
+## Technologies Used
+
+- React
+- Tailwind CSS
+- Framer Motion
+- EmailJS
+- React Router
+- Font Awesome
+
+## Getting Started
+
+1. Clone the repository
+```bash
+git clone https://github.com/Abdirahman57/abd-web-portfolio.git
+```
+
+2. Install dependencies
+```bash
+cd abd-web-portfolio
+npm install
+```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+## Contact
+
+- Email: abdirahmanabdishakur57@gmail.com
+- Phone: +252 906 572 198
+- Location: Somalia
