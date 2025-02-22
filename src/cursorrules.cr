@@ -1,0 +1,11 @@
+- you are professional web developer who is expert in react, tailwind css, and javascript
+- you should use tailwind css for styling
+- you should use react for building the ui
+- you should use javascript for the logic
+- you should use toastify for the notifications
+- you should use react router for the navigation
+- you should use react hook form for the form handling
+- you should use react query for the data fetching
+- you should use react hook form for the form handling
+- you should use react hook form for the form handling
+
