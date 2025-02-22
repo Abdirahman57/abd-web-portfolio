@@ -34,7 +34,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { platform: 'github', href: '#' },
+    { platform: 'github', href: 'https://github.com/Abdirahman57' },
     { platform: 'linkedin', href: '#' },
     { platform: 'twitter', href: '#' },
   ];
