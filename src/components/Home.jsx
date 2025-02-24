@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Hero from './sections/Hero';
 import SkillsSection from './sections/SkillsSection';
 import ExperienceSection from './sections/ExperienceSection';
+import FeaturedBlogs from './sections/FeaturedBlogs';
 import SectionTitle from './common/SectionTitle';
 
 const Home = () => {
@@ -61,6 +62,9 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* Featured Blogs Section */}
+      <FeaturedBlogs />
     </div>
   );
 };
