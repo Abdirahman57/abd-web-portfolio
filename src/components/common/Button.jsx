@@ -2,12 +2,21 @@ import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 const downloadCV = () => {
-  const link = document.createElement('a');
-  link.href = '/abdirahman-cv.pdf';
-  link.download = 'Abdirahman-Abdishakur-CV.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  // Get the user agent to check if it's a mobile device
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // For mobile devices, open the CV in a new tab
+    window.open('/abdirahman-cv.pdf', '_blank');
+  } else {
+    // For desktop devices, trigger download
+    const link = document.createElement('a');
+    link.href = '/abdirahman-cv.pdf';
+    link.download = 'Abdirahman-Abdishakur-CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 };
 
 const Button = ({ children, variant = 'primary', className = '', onClick, ...props }) => {

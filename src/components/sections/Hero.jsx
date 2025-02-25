@@ -78,7 +78,12 @@ AnimatedText.propTypes = {
 
 const Hero = () => {
   const socialPlatforms = ['github', 'linkedin', 'twitter'];
-  const roles = ['Software Developer', 'Mobile App Developer', 'UI/UX Designer'];
+  const roles = [
+    'Software Developer',
+    'Mobile App Developer',
+    'Multimedia Designer',
+    'UI/UX Designer'
+  ];
   const [displayText, setDisplayText] = useState('');
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -120,22 +125,22 @@ const Hero = () => {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="lg:w-1/2 space-y-8"
+        className="lg:w-1/2 space-y-8 text-center lg:text-left"
       >
         <div className="space-y-4">
           <div className="space-y-2">
             <AnimatedText
               text="Hello! I'm"
-              className="text-[64px] leading-[1.1] font-bold text-secondary"
+              className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.1] font-bold text-secondary"
             />
             <AnimatedText
               text="Abdirahman"
-              className="text-[64px] leading-[1.1] font-bold text-primary"
+              className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.1] font-bold text-primary"
             />
           </div>
           <div className="h-12 mt-4">
-            <p className="text-xl font-medium text-gray-600">
-              I am a <span className="text-primary inline-block min-w-[280px]">{displayText}</span>
+            <p className="text-lg sm:text-xl font-medium text-gray-600">
+              I am a <span className="text-primary inline-block min-w-[200px] sm:min-w-[280px]">{displayText}</span>
               <span className="animate-blink">|</span>
             </p>
           </div>
@@ -144,7 +149,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-gray-500 text-lg max-w-lg"
+            className="text-gray-500 text-base sm:text-lg max-w-lg mx-auto lg:mx-0"
           >
             I am passionate about creating beautiful and functional digital experiences that solve real-world problems.
           </motion.p>
@@ -154,10 +159,11 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex items-center gap-4 pt-4"
+          className="flex items-center justify-center lg:justify-start gap-4 pt-4"
         >
-          <Link to="/contact"> <Button>Let&apos;s Talk</Button></Link>
-         
+          <Link to="/contact">
+            <Button>Let&apos;s Talk</Button>
+          </Link>
           <Button variant="outline">View Projects</Button>
         </motion.div>
 
@@ -165,10 +171,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="pt-12"
+          className="pt-12 text-center lg:text-left"
         >
           <p className="text-gray-500 text-sm mb-4">Check Out My</p>
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center lg:justify-start">
             {socialPlatforms.map((platform) => (
               <SocialLink key={platform} platform={platform} />
             ))}
@@ -181,33 +187,69 @@ const Hero = () => {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="lg:w-1/2 relative"
+        className="lg:w-1/2 relative order-first lg:order-last"
       >
         <div className="relative">
-          <motion.img
-            src="/abdirahman.jpg"
-            alt="Profile"
-            className="w-full max-w-lg mx-auto object-cover rounded-lg"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          />
-          {/* Background Shapes */}
+          {/* Decorative Elements */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-lg blur-2xl opacity-50" />
+          <div className="absolute inset-0 bg-white/50 backdrop-blur-3xl rounded-lg" />
+          
+          {/* Main Image Container */}
+          <div className="relative rounded-lg overflow-hidden border-8 border-white shadow-2xl">
+            <motion.img
+              src="/abdirahman.jpg"
+              alt="Profile"
+              className="w-full max-w-lg mx-auto object-cover"
+              initial={{ scale: 1.2, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            />
+            
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          </div>
+
+          {/* Floating Decorative Elements */}
           <motion.div
-            className="absolute -right-8 -top-8 w-72 h-72 bg-primary opacity-10 rounded-full blur-2xl"
+            className="absolute -right-8 -top-8 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
             animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.1, 0.15, 0.1],
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
             }}
-            transition={{ duration: 3, repeat: Infinity }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute -left-8 -bottom-8 w-72 h-72 bg-primary opacity-10 rounded-full blur-2xl"
+            className="absolute -left-8 -bottom-8 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"
             animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.1, 0.15, 0.1],
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
             }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          />
+
+          {/* Decorative Dots */}
+          <div className="absolute -right-4 top-1/4 w-20 h-20">
+            <div className="grid grid-cols-3 gap-2">
+              {[...Array(9)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="w-2 h-2 bg-primary/30 rounded-full"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Decorative Circle */}
+          <motion.div
+            className="absolute -left-4 bottom-1/4 w-8 h-8 border-4 border-primary/30 rounded-full"
+            animate={{
+              rotate: 360,
+              scale: [1, 1.1, 1],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
           />
         </div>
       </motion.div>

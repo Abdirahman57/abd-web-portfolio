@@ -60,7 +60,14 @@ AnimatedText.propTypes = {
 };
 
 const ProfileSection = () => {
-  const roles = ['Software Developer', 'Mobile App Developer', 'UI/UX Designer'];
+  const roles = [
+    'Software Developer',
+    'Mobile App Developer',
+    'React Native Developer',
+    'Flutter Developer',
+    'Database Engineer',
+    'UI/UX Designer'
+  ];
   const [displayText, setDisplayText] = useState('');
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -121,14 +128,26 @@ const ProfileSection = () => {
         <div className="h-12">
           <p className="text-xl font-medium text-gray-600">
             I am a <span className="text-primary inline-block min-w-[280px]">{displayText}</span>
-            {/* <span className="animate-blink">|</span> */}
           </p>
         </div>
-        <p className="text-gray-600 text-lg">
-          I am passionate about creating beautiful and functional digital experiences that solve real-world problems. 
-          With expertise in both front-end and back-end development, I strive to build applications that are not only 
-          visually appealing but also performant and user-friendly.
-        </p>
+        <div className="space-y-4 text-gray-600">
+          <p className="text-lg">
+            I am passionate about creating beautiful and functional digital experiences that solve real-world problems. 
+            With expertise in both front-end and back-end development, I strive to build applications that are not only 
+            visually appealing but also performant and user-friendly.
+          </p>
+          <p className="text-lg">
+            My focus includes mobile app development using React Native and Flutter, allowing me to create 
+            cross-platform applications that provide native experiences. I also specialize in database design 
+            and management, particularly with MongoDB for scalable and flexible data solutions.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-4">
+            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">React Native</span>
+            <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Flutter</span>
+            <span className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">MongoDB</span>
+            <span className="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">Node.js</span>
+          </div>
+        </div>
       </div>
     </div>
   );
